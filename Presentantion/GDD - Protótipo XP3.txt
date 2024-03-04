@@ -1,0 +1,70 @@
+vai ser plataformas simples, mas a principal mecânica é que na fase coisas vão acontecer no cenário junto do tempo de uma música, indicando como um metrônomo, e quando chegar no fim do tempo, exemplo em 8, alguma coisa ocorre que muda de alguma forma o level design, e o esquema é que no cenário ocorre algo que afeta o level design da fase que o player está jogando
+como vai ser a fase e quais serão as mecânicas não decidimos, mas eu tive uma ideia interessante e boa pra te exemplificar
+acredito que seja dificil moldar em uma fase isso mas um exemplo legal que pensei foi assim
+
+uma fase da praia, você pula em boias e não pode cair na agua, pode ter mais alguns desafios mas o importante é estar sempre em cima dos botes para não afundar, e conforme a musica toca pulam peixinhos no cenário como metrônomos 
+e eles tocam junto com a música, pro jogador conseguir ver bem o tempo da musica 
+e na oitava, que é o fim do loop da música pula uma baleia ao inves de um peixe
+
+quando ela cai na agua de novo ela joga todos os botes para cima, e dai voce vai ter que tentar passar a fase com os botes no ar
+ai podemos fazer varias coisas, deixar os botes no ar durante mais um tempo inteiro da musica e fazer o jogador se preocupar com os "obstáculos do céu" como nuvens e passaros, ou so fazer eles cairem na agua de novo e o jogador ter que ser cauteloso
+mas tem varias outras coisas que podemos fazer
+
+outro exemplo, uma fase que é perto de um vulcão em erupção, e a cada batida o vulcão atira uma bolha de lava mas que é só indicativa, na oitava vez ele atira uma rocha flamejante para o ar pra uma direção, esquerda, meio ou direita, e essa rocha vai vir lá do cenário e vai cair perto do jogador, e ele tem que se esquivar dela
+ai por exemplo ele não pode cair na lava, ou tem que se esquivar de outras rochas no caminho, e isso em conjunto com o cenário que atrapalha
+e a graça é que as coisas do cenario vao acontecer sincronizadas com a musica, servindo para o jogador ter noção do que está por vir
+eu achei um bom exemplo aqui
+
+o bichinho ali atras de tempos em tempos vem e bate no sino, fazendo algo acontecer na fase, imagine isso acontecendo mas sendo a mecânica core, por exemplo ele vem vindo conforme a batida da musica, e no crash ele bate no sino e algo acontece na fase, fazendo você ter que desviar ou pular por exemplo
+e isso combinado com outros desafios
+é claro, podemos moldar a ideia, mudar bastante coisa ou refazer do zero, mas inicialmente é isso que pensamos
+o honorato pensou em fazer com modelos 3d, acho que ficaria complexo e conversei com ele pra ver se ele prefere fazer com desenhos 2d mesmo, mas ele disse que vai pensar
+ele manja de música também
+eu sou bem mais de game design, level design e arte, mas sei fazer efeitos sonoros, direção de arte, testar ideias, e se for em unity sei fazer alguns shaders
+
+mas de primeira o honorato fica com a arte e possivelmente a musica, eu fico com o design do jogo e das fases, efeitos sonoros, shader (talvez) e mais qualquer coisa que precisar, e você na programação
+e caso você queira programar em alguma engine que eu não saiba usar eu aprendo a usar relaxa
+tipo unreal
+posso até fazer as eletivas pra dar uma ajuda
+
+eco, é que vai ser assim, o que acontece no cenario "ecoa" para a fase saca?
+vulcão explode no cenário, fase é afetada
+
+baleia pula e  cai na agua, fase é afetada
+
+avalanche ocorre no cenário, a fase é afetada
+e como as coisas que vão acontecer no cenário vão acontecer em SINCRONIA com a música, a questão de "ecoar" parece fazer bem mais sentido
+
+level design procedural, posso criar conjuntos de plataformas, obstáculos e desafios que possam ser gerados proceduralmente na fase de forma coesa e que não quebre a fase
+
+
+acontecimentos procedurais no cenário, exemplo se for a fase da praia, às vezes pula uma baleia e às vezes pula uma enguia gigante que eletrifica a água, às vezes um polvo e ele tenta puxar o jogador pra água
+
+se for a fase de vulcão a direção e tamanho da bola de fogo pode ser procedural, de vários ângulos diferentes e tamanho 
+dizendo como exemplo do que ja citei né, não que a gente reealmente vá fazer fases assim
+
+aqui ta meio confuso mas vou tentar te indicar certinho
+ali em elemento procedural casa arvore, ta meio que tipo, no cenário ele pensou que nessa proporção, 2 SEM objeto procedural, 1 COM objeto procedural
+pode ser qualquer coisa
+ilha barco peixe
+e se for na terra algo assim
+para a tela
+pensamos que ficaria bacana o estilo de tela tipo megaman x
+
+o jogador consegue ter boa visualização do chão (que será bem importante) e ter bastante profundidade no cenário para poder ver o mar e os peixes para ir de acordo com as batidas
+
+inicialmente
+no oitavo beat a baleia vai pular e jogar as boias para o ar
+mas se tivermos tempo podemos adicionar outros animais
+exemplo
+pula um polvo ao inves da baleia, e se você estiver no mar (em cima duma boia, numa alga gigante por exemplo) ele vai tentar te puxar para a água, seria assim, 8° beat ele aparece, e durante o 1°, 2° e 3° ele aparece o tentáculo embaixo que te segue, no quarto junto com a música ele te puxaria, só podendo escapar se você estiver fora do contato com a água
+ou um ouriço gigante, e ele atira 2 padrões aleatórios de espinhos para o ar, que sairiam voando do cenário e tentariam acertar você
+se tivermos tempo quando finalizarmos o básico podemos implementar estes ou outros
+mas por hora acho legal fazermos o que ja deicidmos
+além disso, seria bacana termos uma nuvem mais para cima do cenário, como um "level design mais fácil" (ou ele pode ser mais dificil tambem, podemos ver isso depois) ai quando a baleia jogar as boias para cima ou você for jogado para o ar com uma ostra você pode cair nas nuvens e cortar parte do caminho
+
+sobre o tamanho, esqueci de indicar ali, mas a ostra pode ser 1,5x a largura do jogador e metade da altura
+coqueiro 2x ou 3x a altura, e fino
+boia 1,5x a largura do jogador
+alga gigante 3x a altura do jogador e fino
+
