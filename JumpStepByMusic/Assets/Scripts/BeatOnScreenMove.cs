@@ -40,13 +40,13 @@ public class BeatOnScreenMove : MonoBehaviour
         {
             imgBeatBar.GetComponent<Image>().color = color01;
             colorChanged = false;
-            Debug.Log("Color 1"); 
+            //Debug.Log("Color 1"); 
         }
         else
         {
             imgBeatBar.GetComponent<Image>().color = color02;
             colorChanged = true;
-            Debug.Log("Color 2");
+            //Debug.Log("Color 2");
         }
     }
 }

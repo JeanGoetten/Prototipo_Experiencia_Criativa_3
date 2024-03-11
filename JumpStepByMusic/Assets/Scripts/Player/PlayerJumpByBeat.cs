@@ -14,10 +14,8 @@ public class PlayerJumpByBeat : MonoBehaviour
     public float jumpForce;
     Rigidbody rb;
     private AudioSource audioSource;
-    [SerializeField]
-    private AudioClip jump;
-    [SerializeField]
-    private AudioClip start;
+    [SerializeField] private AudioClip jump;
+    [SerializeField] private AudioClip waterSplashSFX;
     private Animator anim;
     private bool doubleStep; 
 
@@ -33,7 +31,7 @@ public class PlayerJumpByBeat : MonoBehaviour
         verifyGDC = true;
         audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
-        audioSource.PlayOneShot(start, 0.7F);
+        //audioSource.PlayOneShot(start, 0.7F);
 
         doubleStep = false;
     }
@@ -142,18 +140,27 @@ public class PlayerJumpByBeat : MonoBehaviour
     {
         if (other.gameObject.tag == "Deathzone")
         {
-            Restart();
+            StartCoroutine(CDRespawn());
         }
         else if (other.gameObject.tag == "Enemy")
         {
-            Restart();
+            StartCoroutine(CDRespawn()); 
         }
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Water")
+        {
+            audioSource.PlayOneShot(waterSplashSFX, 0.7F);
+        }
         if (other.gameObject.tag == "End")
         {
             NextLevel();
         }
+    }
+    IEnumerator CDRespawn()
+    {
+        yield return new WaitForSeconds(2);
+        Restart();
     }
 }
