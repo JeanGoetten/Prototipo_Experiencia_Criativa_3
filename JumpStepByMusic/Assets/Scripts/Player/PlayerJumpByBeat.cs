@@ -22,6 +22,8 @@ public class PlayerJumpByBeat : MonoBehaviour
     public float doubleJumpInrease = 1.0f;
 
     public float animJumpTime = 1.0f;
+
+    private bool canMove; 
     void Start()
     {
         pos = GetComponent<Transform>();
@@ -34,17 +36,19 @@ public class PlayerJumpByBeat : MonoBehaviour
         //audioSource.PlayOneShot(start, 0.7F);
 
         doubleStep = false;
+
+        canMove = true; 
     }
 
     void Update()
     {
         y = transform.position.y;
         float step = speed * Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && canMove)
         {
             A();
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && canMove)
         {
             D();
         }
@@ -118,7 +122,14 @@ public class PlayerJumpByBeat : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SceneManager.LoadScene("Level01");
+        }
+        else
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
     IEnumerator GCD()
     {
@@ -160,6 +171,8 @@ public class PlayerJumpByBeat : MonoBehaviour
     }
     IEnumerator CDRespawn()
     {
+        canMove = false;
+        anim.SetTrigger("die"); 
         yield return new WaitForSeconds(2);
         Restart();
     }
